@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
+import { getAssetPath } from '../utils/paths'
 
 export default function About() {
   return (
@@ -44,7 +45,7 @@ export default function About() {
                   <div className={styles.skillItem}>
                     <div className={styles.skillIcon}>
                       <Image
-                        src="/images/light.png"
+                        src={getAssetPath('/images/light.png')}
                         alt="Design"
                         width={80}
                         height={80}
@@ -59,7 +60,7 @@ export default function About() {
                   <div className={styles.skillItem}>
                     <div className={styles.skillIcon}>
                       <Image
-                        src="/images/Coffee.png"
+                        src={getAssetPath('/images/Coffee.png')}
                         alt="Development"
                         width={100}
                         height={100}
@@ -75,7 +76,7 @@ export default function About() {
                   <div className={styles.skillItem}>
                     <div className={styles.skillIcon}>
                       <Image
-                        src="/images/flower.png"
+                        src={getAssetPath('/images/flower.png')}
                         alt="Art"
                         width={70}
                         height={70}
@@ -143,7 +144,7 @@ export default function About() {
             
             <div className={styles.aboutImage}>
               <Image
-                src="/images/me.jpg"
+                src={getAssetPath('/images/me.jpg')}
                 alt="Jin Yike Profile"
                 width={400}
                 height={400}
