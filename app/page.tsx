@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -8,10 +9,10 @@ export default function Home() {
       <nav className={styles.navbar}>
         <div className={styles.navContainer}>
           <div className={styles.logo}>
-            <a href="#" className={styles.logoLink}>Jin Yike</a>
+            <Link href="/" className={styles.logoLink}>Jin Yike</Link>
           </div>
           <div className={styles.navLinks}>
-            <a href="#about" className={styles.navLink}>About</a>
+            <Link href="/about" className={styles.navLink}>About</Link>
             <a href="#projects" className={styles.navLink}>Projects</a>
             <a href="#contact" className={styles.navLink}>Contact</a>
           </div>
@@ -70,6 +71,7 @@ export default function Home() {
                 height={80}
                 className={styles.arrowIcon}
               />
+              <span className={styles.aboutMeText}>About Me</span>
             </div>
           </div>
 

@@ -270,6 +270,21 @@
   filter: brightness(1.1);
 }
 
+.aboutMeText {
+  font-family: 'StorylandSansSerif', 'Itim', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: #000000;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.aboutMeText:hover {
+  color: #333333;
+  transform: scale(1.05);
+}
+
 /* 卡片区域 */
 .cardsSection {
   display: flex;
@@ -387,6 +402,11 @@
     width: 60px;
     height: 60px;
   }
+
+  .aboutMeText {
+    font-size: 20px;
+    margin-left: 15px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -438,6 +458,11 @@
   .arrowIcon {
     width: 50px;
     height: 50px;
+  }
+
+  .aboutMeText {
+    font-size: 18px;
+    margin-left: 10px;
   }
 
   .cardsSection {
