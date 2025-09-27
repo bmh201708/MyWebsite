@@ -1,10 +1,11 @@
 /*!***************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./app/page.module.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************/
-/* 字体定义 */
+/* 字体定义 - 生产环境路径 */
 @font-face {
   font-family: 'Ugly Dave';
   src: local('Ugly Dave'),
+       url('/MyWebsite/fonts/Ugly Dave-Regular.otf') format('opentype'),
        url('/fonts/Ugly Dave-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -14,6 +15,7 @@
 @font-face {
   font-family: 'StorylandSansSerif';
   src: local('StorylandSansSerif'),
+       url('/MyWebsite/fonts/StorylandSansSerif.ttf') format('opentype'),
        url('/fonts/StorylandSansSerif.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;

@@ -1,17 +1,62 @@
+/* 全局样式和字体定义 */
+:root {
+  /* CSS 变量用于动态路径 */
+  --base-path: '';
+}
+
+/* 在生产环境中，这个变量会被设置为 '/MyWebsite' */
+[data-env="production"] {
+  --base-path: '/MyWebsite';
+}
+
+/* 字体定义 */
+@font-face {
+  font-family: 'Ugly Dave';
+  src: local('Ugly Dave'),
+       url('/MyWebsite/fonts/Ugly Dave-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'StorylandSansSerif';
+  src: local('StorylandSansSerif'),
+       url('/MyWebsite/fonts/StorylandSansSerif.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 开发环境的字体定义 */
+@media (max-width: 0px) {
+  /* 这个媒体查询永远不会匹配，用于在开发环境中覆盖 */
+}
+
+/* 全局重置样式 */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
 }
 
-.itim-font {
-  font-family: 'Itim', cursive;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

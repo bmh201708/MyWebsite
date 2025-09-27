@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from './page.module.css' 
+import styles from './page.module.css'
+import { getAssetPath } from './utils/paths' 
 
 export default function Home() {
   return (
@@ -32,7 +33,7 @@ export default function Home() {
                   <p>
                     <span className={styles.inlineIconContainer}>
                       <Image
-                        src="/images/Love.png"
+                        src={getAssetPath("/images/Love.png")}
                         alt="Love Icon"
                         width={60}
                         height={60}
@@ -42,7 +43,7 @@ export default function Home() {
                   <p>
                     <span className={styles.inlineIconContainer}>
                       <Image
-                        src="/images/music.png"
+                        src={getAssetPath("/images/music.png")}
                         alt="music Icon"
                         width={60}
                         height={60}
@@ -52,7 +53,7 @@ export default function Home() {
                   <p>
                     <span className={styles.inlineIconContainer}>
                       <Image
-                        src="/images/sun.png"
+                        src={getAssetPath("/images/sun.png")}
                         alt="sun Icon"
                         width={60}
                         height={60}
@@ -65,7 +66,7 @@ export default function Home() {
             {/* 箭头图标 */}
             <div className={styles.arrowContainer}>
               <Image
-                src="/images/Arrow.jpg"
+                src={getAssetPath("/images/Arrow.jpg")}
                 alt="Arrow Icon"
                 width={80}
                 height={80}
@@ -78,7 +79,7 @@ export default function Home() {
           {/* 个人资料图片 */}
           <div className={styles.profileImageContainer}>
             <Image
-              src="/images/profile-image.png"
+              src={getAssetPath("/images/profile-image.png")}
               alt="Jin Yike Profile"
               width={939}
               height={799}
