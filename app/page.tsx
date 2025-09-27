@@ -24,13 +24,53 @@ export default function Home() {
         <div className={styles.mainContent}>
           {/* 个人介绍文本区域 */}
           <div className={styles.textSection}>
-            <h1 className={styles.title}>Hi！I'm Jin Yike</h1>
-            <div className={styles.description}>
-              <p>This is some desscription...</p>
-              <p>xxxx</p>
-              <p>xxxx</p>
-              <p>xxxx</p>
-              <p>xxxxx</p>
+            <div className={styles.textWithIcon}>
+              <div className={styles.textContent}>
+                <h1 className={styles.title}>Hello！ </h1>
+                <h1 className={styles.title}>I'm Jin Yike</h1>
+                <div className={styles.description}>
+                  <p>
+                    <span className={styles.inlineIconContainer}>
+                      <Image
+                        src="/images/Love.png"
+                        alt="Love Icon"
+                        width={60}
+                        height={60}
+                        className={styles.inlineIcon}
+                      />
+                    </span>ZJU  |  Junior Year   |  Designer  |  Developer</p>
+                  <p>
+                    <span className={styles.inlineIconContainer}>
+                      <Image
+                        src="/images/music.png"
+                        alt="music Icon"
+                        width={60}
+                        height={60}
+                        className={styles.inlineIcon}
+                      />
+                    </span>Like singing , drawing and art etc.</p>
+                  <p>
+                    <span className={styles.inlineIconContainer}>
+                      <Image
+                        src="/images/sun.png"
+                        alt="sun Icon"
+                        width={60}
+                        height={60}
+                        className={styles.inlineIcon}
+                      />
+                    </span>Everything to be continued...</p>
+                </div>
+              </div>
+            </div>
+                      {/* 箭头图标 */}
+            <div className={styles.arrowContainer}>
+              <Image
+                src="/images/Arrow.jpg"
+                alt="Arrow Icon"
+                width={80}
+                height={80}
+                className={styles.arrowIcon}
+              />
             </div>
           </div>
 
@@ -48,7 +88,11 @@ export default function Home() {
         </div>
 
         {/* 底部卡片区域 */}
+        <div className={styles.subtitle}>
+            <h2>Portfolio</h2>
+        </div>
         <div className={styles.cardsSection}>
+
           <div className={styles.card}>
             <div className={styles.cardContent}>
               <h3>项目 1</h3>
