@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
-  basePath: '/MyWebsite', // GitHub Pages 子路径
-  assetPrefix: '/MyWebsite/', // 静态资源前缀
+  basePath: isProd ? '/MyWebsite' : '', // 只在生产环境使用 GitHub Pages 子路径
+  assetPrefix: isProd ? '/MyWebsite/' : '', // 只在生产环境使用静态资源前缀
   images: {
     domains: ['localhost'],
     unoptimized: true, // GitHub Pages 不支持 Next.js 图片优化
