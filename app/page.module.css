@@ -1,0 +1,337 @@
+.main {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+/* 导航栏样式 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.navContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'Itim', cursive;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLink {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px; /* 为固定导航栏留出空间 */
+  padding: 20px;
+}
+
+/* 主要内容区域 - 使用flexbox布局 */
+.mainContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  flex: 1;
+  padding: 60px 80px 40px 80px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* 文本区域 */
+.textSection {
+  flex: 1.5;
+  max-width: 750px;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+
+.title {
+  font-family: 'Itim', cursive;
+  font-weight: 400;
+  font-size: clamp(48px, 6vw, 100px);
+  line-height: 1.2;
+  color: #000000;
+  margin: 0 0 30px 0;
+  text-align: left;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.title:hover {
+  transform: translateY(-3px);
+  color: #333333;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.title:hover::after {
+  width: 100%;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 50px);
+  line-height: 1.21;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.description:hover {
+  color: #333333;
+  transform: translateX(5px);
+}
+
+.description p {
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.description p:hover {
+  color: #666666;
+}
+
+/* 个人资料图片容器 */
+.profileImageContainer {
+  flex: 1;
+  max-width: 900px;
+  margin-left: -50px;
+}
+
+.profileImage {
+  width: 150%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* 卡片区域 */
+.cardsSection {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background-color: #E5E5E5;
+}
+
+.cardContent {
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .cardContent {
+  opacity: 1;
+}
+
+.cardContent h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 10px 0;
+}
+
+.cardContent p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 1400px) {
+  .mainContent {
+    padding: 50px 60px 40px 60px;
+    gap: 50px;
+  }
+
+  .textSection {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 40px 30px 40px;
+  }
+
+  .textSection {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .profileImageContainer {
+    max-width: 500px;
+    margin-left: 0;
+    order: -1; /* 在移动端将图片放在文字上方 */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .navLinks {
+    gap: 15px;
+  }
+
+  .navLink {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .mainContent {
+    padding: 20px 20px;
+    gap: 25px;
+  }
+
+  .title {
+    font-size: clamp(36px, 8vw, 60px);
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: clamp(18px, 4vw, 32px);
+  }
+
+  .profileImageContainer {
+    max-width: 400px;
+  }
+
+  .cardsSection {
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .card {
+    width: 280px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .navContainer {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .navLinks {
+    gap: 10px;
+  }
+
+  .navLink {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .cardsSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+    height: 250px;
+  }
+
+  .profileImageContainer {
+    max-width: 320px;
+  }
+}
+
