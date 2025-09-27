@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "npm run build && touch dist/.nojekyll",
     "start": "next start",
     "lint": "next lint"
   },
