@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/MyWebsite', // GitHub Pages 子路径
+  assetPrefix: '/MyWebsite/', // 静态资源前缀
   images: {
     domains: ['localhost'],
     unoptimized: true, // GitHub Pages 不支持 Next.js 图片优化
