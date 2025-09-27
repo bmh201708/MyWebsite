@@ -53,6 +53,21 @@
   color: #000000;
 }
 
+.logoLink {
+  font-family: 'StorylandSansSerif', 'Itim', cursive;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logoLink:hover {
+  color: #333333;
+  transform: scale(1.05);
+}
+
 .navLinks {
   display: flex;
   gap: 30px;
@@ -392,6 +407,10 @@
     font-size: 20px;
   }
 
+  .logoLink {
+    font-size: 20px;
+  }
+
   .mainContent {
     padding: 20px 20px;
     gap: 25px;
@@ -452,6 +471,10 @@
   }
 
   .logo {
+    font-size: 18px;
+  }
+
+  .logoLink {
     font-size: 18px;
   }
 

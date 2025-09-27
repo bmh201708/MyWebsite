@@ -8,10 +8,9 @@ export default function Home() {
       <nav className={styles.navbar}>
         <div className={styles.navContainer}>
           <div className={styles.logo}>
-            <span>Jin Yike</span>
+            <a href="#" className={styles.logoLink}>Jin Yike</a>
           </div>
           <div className={styles.navLinks}>
-            <a href="#home" className={styles.navLink}>Home</a>
             <a href="#about" className={styles.navLink}>About</a>
             <a href="#projects" className={styles.navLink}>Projects</a>
             <a href="#contact" className={styles.navLink}>Contact</a>
@@ -62,7 +61,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-                      {/* 箭头图标 */}
+            {/* 箭头图标 */}
             <div className={styles.arrowContainer}>
               <Image
                 src="/images/Arrow.jpg"
