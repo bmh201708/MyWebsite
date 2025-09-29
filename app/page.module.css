@@ -1,23 +1,4 @@
-/* 字体定义 - 生产环境路径 */
-@font-face {
-  font-family: 'Ugly Dave';
-  src: local('Ugly Dave'),
-       url('/MyWebsite/fonts/Ugly Dave-Regular.otf') format('opentype'),
-       url('/fonts/Ugly Dave-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'StorylandSansSerif';
-  src: local('StorylandSansSerif'),
-       url('/MyWebsite/fonts/StorylandSansSerif.ttf') format('opentype'),
-       url('/fonts/StorylandSansSerif.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* 字体通过动态注入处理，支持环境变量路径 */
 
 .main {
   min-height: 100vh;
@@ -99,7 +80,7 @@
   flex-direction: column;
   min-height: calc(100vh - 70px);
   margin-top: 70px; /* 为固定导航栏留出空间 */
-  padding: 20px;
+  padding: 20px 100px;
 }
 
 /* 主要内容区域 - 使用flexbox布局 */
@@ -170,7 +151,7 @@
 .title {
   font-family: 'StorylandSansSerif', 'Itim', cursive;
   font-weight: 400;
-  font-size: clamp(48px, 6vw, 100px);
+  font-size: clamp(48px, 5vw, 80px);
   line-height: 1.2;
   color: #000000;
   margin: 0 0 30px 0;
@@ -212,7 +193,7 @@
 .description {
   font-family: 'StorylandSansSerif', sans-serif;
   font-weight: 400;
-  font-size: clamp(18px, 2vw, 30px);
+  font-size: clamp(18px, 1.8vw, 24px);
   line-height: 2.2;
   color: #000000;
   cursor: pointer;
@@ -237,7 +218,7 @@
 .profileImageContainer {
   flex: 1;
   max-width: 1200px;
-  margin-left: -200px;
+  margin-left: -250px;
 }
 
 .profileImage {
@@ -274,7 +255,7 @@
 
 .aboutMeText {
   font-family: 'StorylandSansSerif', 'Itim', cursive;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 400;
   color: #000000;
   margin-left: 20px;

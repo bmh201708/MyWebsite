@@ -1,0 +1,374 @@
+/* 字体通过动态注入处理，支持环境变量路径 */
+
+.main {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+/* 导航栏样式 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.navContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'StorylandSansSerif', 'Itim', cursive;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.logoLink {
+  font-family: 'StorylandSansSerif', 'Itim', cursive;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logoLink:hover {
+  color: #333333;
+  transform: scale(1.05);
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLink {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
+
+.navLinkActive {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navLinkActive:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px 20px;
+  min-height: calc(100vh - 70px);
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* 标题区域 */
+.titleSection {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pageTitle {
+  font-family: 'StorylandSansSerif', 'Itim', cursive;
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pageTitle:hover {
+  transform: translateY(-3px);
+  color: #333333;
+}
+
+.pageTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.pageTitle:hover::after {
+  width: 100%;
+}
+
+.subtitle {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #666666;
+  margin: 0;
+}
+
+/* 联系信息卡片 */
+.contactCard {
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 60px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.emailSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+}
+
+.emailIcon {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.emailIcon:hover {
+  transform: scale(1.1);
+  background-color: #e9ecef;
+}
+
+.emailInfo {
+  flex: 1;
+}
+
+.emailTitle {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 15px 0;
+}
+
+.emailAddress {
+  font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.emailAddress:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.emailDescription {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 附加信息 */
+.additionalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.infoIcon {
+  font-size: 24px;
+  width: 40px;
+  text-align: center;
+}
+
+.infoText {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: 16px;
+  color: #333333;
+}
+
+/* 返回按钮 */
+.backSection {
+  margin-top: 20px;
+}
+
+.backButton {
+  font-family: 'StorylandSansSerif', 'Inter', sans-serif;
+  font-size: 18px;
+  color: #666666;
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.backButton:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateX(-5px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 15px 30px 15px;
+  }
+
+  .contactContent {
+    gap: 40px;
+  }
+
+  .navLinks {
+    gap: 15px;
+  }
+
+  .navLink {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logoLink {
+    font-size: 20px;
+  }
+
+  .contactCard {
+    padding: 40px 20px;
+  }
+
+  .emailSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .emailIcon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .additionalInfo {
+    gap: 15px;
+  }
+
+  .infoItem {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navContainer {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .navLinks {
+    gap: 10px;
+  }
+
+  .navLink {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .logoLink {
+    font-size: 18px;
+  }
+
+  .contactCard {
+    padding: 30px 15px;
+  }
+
+  .pageTitle {
+    font-size: clamp(32px, 7vw, 48px);
+  }
+}

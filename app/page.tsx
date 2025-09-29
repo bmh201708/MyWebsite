@@ -4,8 +4,30 @@ import styles from './page.module.css'
 import { getAssetPath } from './utils/paths' 
 
 export default function Home() {
+  // 动态字体样式注入
+  const fontStyles = `
+    @font-face {
+      font-family: 'StorylandSansSerif';
+      src: local('StorylandSansSerif'),
+           url('${getAssetPath('/fonts/StorylandSansSerif.ttf')}') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Ugly Dave';
+      src: local('Ugly Dave'),
+           url('${getAssetPath('/fonts/Ugly Dave-Regular.otf')}') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  `;
+
   return (
-    <main className={styles.main}>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: fontStyles }} />
+      <main className={styles.main}>
       {/* 顶部导航栏 */}
       <nav className={styles.navbar}>
         <div className={styles.navContainer}>
@@ -14,8 +36,8 @@ export default function Home() {
           </div>
           <div className={styles.navLinks}>
             <Link href="/about" className={styles.navLink}>About</Link>
-            <a href="#projects" className={styles.navLink}>Projects</a>
-            <a href="#contact" className={styles.navLink}>Contact</a>
+            <Link href="#projects" className={styles.navLink}>Projects</Link>
+            <Link href="/contact" className={styles.navLink}>Contact</Link>
           </div>
         </div>
       </nav>
@@ -122,5 +144,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   )
 }

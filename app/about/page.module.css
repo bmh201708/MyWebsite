@@ -1,16 +1,5 @@
-/* 导入字体 */
+/* 字体通过动态注入处理，支持环境变量路径 */
 @import url('https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap');
-
-/* 定义自定义字体 */
-@font-face {
-  font-family: 'StorylandSansSerif';
-  src: local('StorylandSansSerif'),
-       url('/MyWebsite/fonts/StorylandSansSerif.ttf') format('opentype'),
-       url('/fonts/StorylandSansSerif.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 .main {
   min-height: 100vh;
