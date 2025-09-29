@@ -1,8 +1,11 @@
 /**
  * 获取静态资源的完整路径
- * 在生产环境中会自动添加 basePath 前缀
+ * 与 next.config.js 中的 assetPrefix 保持一致
  */
 export function getAssetPath(path: string): string {
-  const basePath = process.env.NODE_ENV === 'production' ? '/MyWebsite' : '';
-  return `${basePath}${path}`;
+  // 检查是否为生产环境，默认为开发环境
+  const isProduction = process.env.NODE_ENV === 'production';
+  // 与 next.config.js 中的 assetPrefix 保持一致
+  const assetPrefix = isProduction ? '/MyWebsite' : '';
+  return `${assetPrefix}${path}`;
 }

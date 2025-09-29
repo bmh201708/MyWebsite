@@ -58,8 +58,8 @@ export default function Contact() {
               </div>
               <div className={styles.emailInfo}>
                 <h2 className={styles.emailTitle}>Email</h2>
-                <a href="mailto:3230103159@zju.edu.cn" className={styles.emailAddress}>
-                  3230103159@zju.edu.cn
+                <a href="mailto:jin-yike@zju.edu.cn" className={styles.emailAddress}>
+                  jin-yike@zju.edu.cn
                 </a>
                 <p className={styles.emailDescription}>
                   If you have any questions or cooperation intentions, please contact me through email
