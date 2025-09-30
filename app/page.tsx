@@ -112,7 +112,7 @@ export default function Home() {
         </div>
 
         {/* 底部卡片区域 */}
-        <div className={styles.subtitle}>
+        <div id = "portfolio"className={styles.subtitle}>
             <h2>Portfolio</h2>
         </div>
         <div className={styles.cardsSection}>
