@@ -79,7 +79,8 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 70px);
-  margin-top: 70px; /* 为固定导航栏留出空间 */
+  margin-top: 70px;
+  /* 为固定导航栏留出空间 */
   padding: 20px 100px;
 }
 
@@ -190,6 +191,7 @@
   color: #000000;
   text-align: center;
 }
+
 .description {
   font-family: 'StorylandSansSerif', sans-serif;
   font-weight: 400;
@@ -267,6 +269,24 @@
   color: #333333;
   transform: scale(1.05);
 }
+
+.arrowLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.arrowLink:hover .arrowIcon {
+  transform: translateY(-5px) scale(1.1);
+  filter: brightness(1.1);
+}
+
+.arrowLink:hover .aboutMeText {
+  color: #333333;
+  transform: scale(1.05);
+}
+
 
 /* 卡片区域 */
 .cardsSection {
@@ -372,7 +392,8 @@
   .profileImageContainer {
     max-width: 700px;
     margin-left: 0;
-    order: -1; /* 在移动端将图片放在文字上方 */
+    order: -1;
+    /* 在移动端将图片放在文字上方 */
   }
 
   .arrowContainer {
@@ -501,4 +522,3 @@
     max-width: 320px;
   }
 }
-
